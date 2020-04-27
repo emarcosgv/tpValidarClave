@@ -10,10 +10,9 @@ public class ValidarContraseñaTest {
     private ValidarContraseña validarContraseña;
 
     @Before
-    public void init(){
+    public void init() {
         this.validarContraseña = new ValidarContraseña();
     }
-
 
     @Test
     public void claveValida() {
@@ -32,21 +31,25 @@ public class ValidarContraseñaTest {
         this.validarContraseña.setContraseña("@1mM");
         Assert.assertFalse(this.validarContraseña.validar());
     }
+
     @Test
     public void claveValidaConEspacios() {
         this.validarContraseña.setContraseña("PruebaDe ContraseñaValida1");
         Assert.assertFalse(this.validarContraseña.validar());
     }
+
     @Test
     public void claveSinDigitos() {
         this.validarContraseña.setContraseña("PruebaDeContraseñaValida");
         Assert.assertFalse(this.validarContraseña.validar());
     }
+
     @Test
     public void claveSinMayusculas() {
         this.validarContraseña.setContraseña("pruebadecontraseña1");
         Assert.assertFalse(this.validarContraseña.validar());
     }
+
     @Test
     public void claveSinMinusculas() {
         this.validarContraseña.setContraseña("PRUEBADECONTRASEÑA1");
